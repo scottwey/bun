@@ -11,7 +11,7 @@ const Index = ({ game, click, buyProducer }) => (
     <h1>BUN QUEST</h1>
     <h2>{game.money} buns</h2>
     <Ticker /><br />
-    <Button onClick={click}> Bake Bun </Button><hr />
+    <Button onClick={click}> Bake Bun </Button><br />
     <ProducerList game={game} buyAction={buyProducer} /><br />
   </div>
 );
