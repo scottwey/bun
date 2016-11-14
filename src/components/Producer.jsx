@@ -18,9 +18,7 @@ const style = StyleSheet.create({
   notEnough: {
     border: '2px solid #bbbbbb',
     pointerEvents: 'none',
-  },
-  faded: {
-    opacity: 0.25,
+    opacity: 0.50,
   },
 });
 
@@ -32,16 +30,26 @@ const Producer = ({ producer, buyAction, money }) => {
   const ownOne = count > 0;
   const className = css(style.box,
     enoughMoney ? style.buy : style.notEnough,
-    (!enoughMoney && !ownOne) && style.faded
   );
-  return (
-    <div className={className} onClick={boundBuy}>
-      <h3>{name}</h3>
-      {description} <br />
-      Produces { product } buns at a time. You have {count}. <br />
-      Price: {price} <br />
-    </div>
-  );
+  let producerCard;
+  if (ownOne) {
+    producerCard = (
+      <div className={className} onClick={boundBuy}>
+        <h3>{name}</h3>
+        {description} <br />
+        Produces { product } buns at a time. You have {count}. <br />
+        Price: {price} <br /><br />
+      </div>
+    );
+  } else {
+    producerCard = (
+      <div className={className} onClick={boundBuy}>
+        <h3>???</h3>
+        Price: {price} <br /><br />
+      </div>
+    );
+  }
+  return producerCard;
 };
 
 Producer.propTypes = {
