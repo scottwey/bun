@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import BuyButton from './BuyButton';
 import { StyleSheet, css } from 'aphrodite';
 
 const style = StyleSheet.create({
@@ -13,6 +12,7 @@ const style = StyleSheet.create({
     border: '2px solid #39ffaa',
     ':active': {
       backgroundColor: '#99ffcc',
+      color: '#ffffff',
     },
   },
   notEnough: {
