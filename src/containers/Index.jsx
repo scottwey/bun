@@ -15,7 +15,7 @@ const style = StyleSheet.create({
   },
   column: {
     flex: 1,
-    maxWidth: '400px',
+    maxWidth: '30vw',
     flexDirection: 'column',
   },
   left: {

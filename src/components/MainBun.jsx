@@ -5,8 +5,8 @@ import bun from '../svg/bun.svg'
 const style = StyleSheet.create({
   bun: {
     userSelect: 'none',
-    height: '350px',
-    width: 'auto',
+    height: 'auto',
+    width: '100%',
     ':active': {
       transform: 'scale(0.9)',
     },

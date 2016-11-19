@@ -5,7 +5,7 @@ const style = StyleSheet.create({
   box: {
     userSelect: 'none',
     margin: '5px',
-    width: '400px',
+    width: '40vw',
     padding: '3px',
   },
   buy: {
