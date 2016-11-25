@@ -3,20 +3,26 @@ import { StyleSheet, css } from 'aphrodite';
 import bun from '../svg/bun.svg'
 
 const style = StyleSheet.create({
+  wrapper: {
+    flex: '1',
+  },
   bun: {
-    userSelect: 'none',
-    height: 'auto',
-    width: '100%',
+    margin: '25px',
     ':active': {
-      transform: 'scale(0.9)',
+      transform: 'scale(0.95)',
     },
   },
 });
 
-const className = css(style.bun);
+const wrapper = css(style.wrapper);
+const bunClass = css(style.bun);
 
 const MainBun = ({ onClick }) => {
-  return (<img alt="bun" onClick={onClick} className={className} src={bun} />);
+  return (
+    <div  onClick={onClick} className={wrapper}>
+      <img alt="bun"className={bunClass} src={bun} />
+    </div>
+  );
 };
 
 

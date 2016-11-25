@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
+import { combineProducersAndCount } from '../selectors/producerCountSelector';
 
-const producerSelector = state => state.game.producers;
+const countsSelector = state => state.game.producers;
 
-export const moneyPerTickSelector = createSelector(producerSelector,
-  producers => producers.reduce((sum, producer) => sum + (producer.count * producer.product), 0));
+export const moneyPerTickSelector = createSelector(countsSelector,
+  counts => combineProducersAndCount(counts).reduce((sum, producer) => sum + (producer.count * producer.product), 0));

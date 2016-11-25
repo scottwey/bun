@@ -1,4 +1,4 @@
-const producerData = [
+const producers = [
   {
     name: 'Baker',
     description: 'Bakers of buns to help you produce more, not experts or artisans by any means, but better than nothing.',
@@ -29,5 +29,4 @@ const producerData = [
   },
 ];
 
-const producers = producerData.map(producer => ({ ...producer, count: 0 }));
 export default producers;

@@ -3,13 +3,12 @@ import { StyleSheet, css } from 'aphrodite';
 
 const style = StyleSheet.create({
   box: {
-    userSelect: 'none',
     margin: '5px',
-    width: '40vw',
+    width: '30vw',
     padding: '3px',
   },
   buy: {
-    border: '2px solid #39ffaa',
+    border: '2px solid #99ffcc',
     ':active': {
       backgroundColor: '#99ffcc',
       color: '#ffffff',

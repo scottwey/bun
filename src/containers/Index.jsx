@@ -6,39 +6,39 @@ import * as gameActions from '../ducks/game';
 import ProducerList from '../components/ProducerList';
 import Ticker from '../components/Ticker';
 import MainBun from '../components/MainBun';
+import producerCountSelector from '../selectors/producerCountSelector';
 
 const style = StyleSheet.create({
   parent: {
+    height: '100vh',
+    width: '100vw',
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     userSelect: 'none',
   },
   column: {
-    flex: 1,
+    flex: '1 1 auto',
     maxWidth: '30vw',
     flexDirection: 'column',
-  },
-  left: {
-    justifyContent: 'flex-end',
-  },
-  right: {
-    justifyContent: 'flex-start',
   },
 });
 
 const parent = css(style.parent);
-const leftColumn = css(style.column, style.left);
-const rightColumn = css(style.column, style.right);
+const column = css(style.column);
 
 const Index = ({ game, click, buyProducer }) => (
   <div className={parent}>
-    <div className={leftColumn}>
-      <h1>BUN QUEST</h1>
-      <h2>{game.money} buns</h2>
-      <Ticker /><br />
+    <div className={column}>
       <MainBun onClick={click} />
+      <div>
+        <center>
+        <h2>{game.money} buns</h2>
+        <Ticker /><br />
+        </center>
+      </div>
     </div>
-    <div className={rightColumn}>
+    <div className={column}>
       <ProducerList game={game} buyAction={buyProducer} />
     </div>
   </div>
@@ -50,7 +50,9 @@ Index.propTypes = {
   buyProducer: PropTypes.func.isRequired,
 };
 
-const stateToProps = state => ({ game: state.game });
+const stateToProps = state => ({
+  game: { ...state.game, producers: producerCountSelector(state) },
+});
 const dispatchToProps = dispatch => bindActionCreators(gameActions, dispatch);
 
 export default connect(stateToProps, dispatchToProps)(Index);
