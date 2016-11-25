@@ -1,3 +1,7 @@
+import baker from '../svg/baker.svg';
+import baker2 from '../svg/baker2.svg';
+
+
 const producers = [
   {
     name: 'Baker',
@@ -5,6 +9,7 @@ const producers = [
     product: 1,
     price: 10,
     scaling: 1.15,
+    graphic: baker,
   },
   {
     name: 'Bun Artisan',
@@ -12,6 +17,7 @@ const producers = [
     product: 5,
     price: 85,
     scaling: 1.14,
+    graphic: baker2,
   },
   {
     name: 'Bunsmith',
@@ -19,6 +25,7 @@ const producers = [
     product: 25,
     price: 720,
     scaling: 1.13,
+    graphic: baker2,
   },
   {
     name: 'Bun Knight',
@@ -26,6 +33,7 @@ const producers = [
     product: 125,
     price: 6210,
     scaling: 1.12,
+    graphic: baker2,
   },
 ];
 

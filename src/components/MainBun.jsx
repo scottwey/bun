@@ -4,12 +4,13 @@ import bun from '../svg/bun.svg'
 
 const style = StyleSheet.create({
   wrapper: {
-    flex: '1',
+    width: '100%',
   },
   bun: {
-    margin: '25px',
+    width: 'auto',
+    margin: '5%',
     ':active': {
-      transform: 'scale(0.95)',
+      transform: 'scale(0.97)',
     },
   },
 });
@@ -19,8 +20,8 @@ const bunClass = css(style.bun);
 
 const MainBun = ({ onClick }) => {
   return (
-    <div  onClick={onClick} className={wrapper}>
-      <img alt="bun"className={bunClass} src={bun} />
+    <div onClick={onClick} className={wrapper}>
+      <img alt="bun" className={bunClass} src={bun} />
     </div>
   );
 };

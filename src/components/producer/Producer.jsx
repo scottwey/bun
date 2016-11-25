@@ -1,11 +1,15 @@
 import React, { PropTypes } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import ProducerInfo from './ProducerInfo';
+import ProducerGraphic from './ProducerGraphic';
 
 const style = StyleSheet.create({
   box: {
-    margin: '5px',
-    width: '30vw',
-    padding: '3px',
+    margin: '5px 0px',
+    width: '100%',
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'row',
   },
   buy: {
     border: '2px solid #99ffcc',
@@ -21,34 +25,22 @@ const style = StyleSheet.create({
   },
 });
 
+const infoStyle = css(style.info);
+
 const Producer = ({ producer, buyAction, money }) => {
-  const { name, description, product, price: basePrice, scaling, count } = producer;
+  const { price: basePrice, scaling, count, graphic } = producer;
   const price = Math.ceil(basePrice * Math.pow(scaling, count));
   const boundBuy = buyAction.bind(undefined, price);
   const enoughMoney = money >= price;
-  const ownOne = count > 0;
-  const className = css(style.box,
+  const boxStyle = css(style.box,
     enoughMoney ? style.buy : style.notEnough,
   );
-  let producerCard;
-  if (ownOne) {
-    producerCard = (
-      <div className={className} onClick={boundBuy}>
-        <h3>{name}</h3>
-        {description} <br />
-        Produces { product } buns at a time. You have {count}. <br />
-        Price: {price} <br /><br />
-      </div>
-    );
-  } else {
-    producerCard = (
-      <div className={className} onClick={boundBuy}>
-        <h3>???</h3>
-        Price: {price} <br /><br />
-      </div>
-    );
-  }
-  return producerCard;
+  return (
+    <div className={boxStyle} onClick={boundBuy}>
+      <ProducerGraphic count={count} asset={graphic} />
+      <ProducerInfo price={price} producer={producer} />
+    </div>
+  );
 };
 
 Producer.propTypes = {

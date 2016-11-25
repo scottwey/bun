@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 import * as gameActions from '../ducks/game';
-import ProducerList from '../components/ProducerList';
+import ProducerList from '../components/producer/ProducerList';
 import Ticker from '../components/Ticker';
 import MainBun from '../components/MainBun';
 import producerCountSelector from '../selectors/producerCountSelector';
@@ -16,26 +16,31 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     userSelect: 'none',
+    cursor: 'default',
   },
   column: {
     flex: '1 1 auto',
-    maxWidth: '30vw',
+    maxWidth: '50vw',
     flexDirection: 'column',
+  },
+  flexCenter: {
+    display: 'flex',
+    justifyContent: 'center',
+    textAlign: 'center',
   },
 });
 
 const parent = css(style.parent);
 const column = css(style.column);
+const centerColumn = css(style.column, style.flexCenter);
 
 const Index = ({ game, click, buyProducer }) => (
   <div className={parent}>
-    <div className={column}>
+    <div className={centerColumn}>
       <MainBun onClick={click} />
       <div>
-        <center>
         <h2>{game.money} buns</h2>
-        <Ticker /><br />
-        </center>
+        <Ticker />
       </div>
     </div>
     <div className={column}>
