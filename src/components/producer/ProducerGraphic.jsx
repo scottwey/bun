@@ -6,7 +6,8 @@ const style = StyleSheet.create({
     width: '30%',
   },
   hidden: {
-    backgroundColor: '#cccccc',
+    height: '14em',
+    backgroundColor: '#cbcbcb',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -28,7 +29,7 @@ const ProducerGraphic = ({ asset, count }) => {
   } else {
     graphic = (
       <div className={hiddenStyle}>
-        <span style={{ color: 'white', fontSize: '2em' }}>
+        <span style={{ color: 'white', fontSize: '3em', fontWeight: 'bold' }}>
           ?
         </span>
       </div>

@@ -19,7 +19,7 @@ const style = StyleSheet.create({
     },
   },
   notEnough: {
-    border: '2px solid #bbbbbb',
+    border: '2px solid #cbcbcb',
     pointerEvents: 'none',
     opacity: 0.50,
   },
