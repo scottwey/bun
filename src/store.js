@@ -32,13 +32,11 @@ export function throttle(fxn, delay) {
   const self = this;
   self.now = new Date();
   if (!self.prev) {
-    self.prev = [];
-    self.prev.push(self.now);
+    self.prev = self.now;
   }
   const earliest = Math.min(...self.prev);
   if (self.now - earliest > delay) {
     fxn();
-    self.prev = [];
+    self.prev = undefined;
   }
-  self.prev.push(self.now);
 }
