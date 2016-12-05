@@ -7,8 +7,8 @@ const style = StyleSheet.create({
     width: '100%',
   },
   bun: {
-    width: 'auto',
-    margin: '5%',
+    width: '90%',
+    padding: '0% 5%',
     ':active': {
       transform: 'scale(0.97)',
     },

@@ -38,7 +38,7 @@ const Index = ({ game, click, buyProducer }) => (
   <div className={parent}>
     <div className={centerColumn}>
       <MainBun onClick={click} />
-      <div>
+      <div style={{ margin: '0% 5%' }}>
         <h2>{game.money} buns</h2>
         <Ticker />
       </div>
