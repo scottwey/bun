@@ -34,8 +34,7 @@ export function throttle(fxn, delay) {
   if (!self.prev) {
     self.prev = self.now;
   }
-  const earliest = Math.min(...self.prev);
-  if (self.now - earliest > delay) {
+  if (self.now - self.prev > delay) {
     fxn();
     self.prev = undefined;
   }
