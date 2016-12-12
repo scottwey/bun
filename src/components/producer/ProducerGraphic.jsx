@@ -7,7 +7,7 @@ const style = StyleSheet.create({
   },
   hidden: {
     height: '14em',
-    backgroundColor: '#cbcbcb',
+    backgroundColor: '#bbbbbb',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

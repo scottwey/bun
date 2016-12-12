@@ -2,6 +2,7 @@ import baker from '../svg/baker.svg';
 import baker2 from '../svg/baker2.svg';
 import artisan from '../svg/artisan.svg';
 import smith from '../svg/smith.svg';
+import knight from '../svg/knight.svg';
 
 const producers = [
   {
@@ -34,7 +35,7 @@ const producers = [
     product: 125,
     price: 6210,
     scaling: 1.12,
-    graphic: baker2,
+    graphic: knight,
   },
 ];
 
